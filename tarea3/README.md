@@ -1,1 +1,0 @@
-cd number-of-provinces
