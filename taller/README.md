@@ -44,16 +44,15 @@
 ![Accepted — Longest Common Subsequence](evidencias/longest-common-subsequence-accepted.png)
 
 ---
-
 ## 435. Non-overlapping Intervals
 
 - **Enlace:** https://leetcode.com/problems/non-overlapping-intervals/
 - **Familia:** greedy
-- **Criterio greedy:** es la selección de actividades contada al revés. Se ordenan los intervalos por `end` y en cada paso se acepta el siguiente que no pisa al último aceptado (`start >= fin_ultimo`), o sea el que termina primero entre los que aún caben. Los que no se aceptan son los que se borran: respuesta = `n − conservados`. Dos intervalos que se tocan en un extremo no se solapan.
-- **Complejidad:** tiempo `O(n log n)` (domina el sort); espacio `O(1)` extra con el sort in-place, con `n` = número de intervalos.
+- **Criterio greedy:** es la selección de actividades contada al revés. Se ordenan los intervalos por `end` con un merge sort propio y en cada paso se acepta el siguiente que no pisa al último aceptado (`start >= fin_ultimo`), o sea el que termina primero entre los que aún caben. Los que no se aceptan son los que se borran: respuesta = `n − conservados`. Dos intervalos que se tocan en un extremo no se solapan.
+- **Complejidad:** tiempo `O(n log n)` (domina el merge sort, la pasada greedy es `O(n)`); espacio `O(n)` (arreglos auxiliares del merge sort), con `n` = número de intervalos.
 - **Código:** [non-overlapping-intervals/solution.py](non-overlapping-intervals/solution.py)
 
-![Accepted — Non-overlapping Intervals](evidencias/non-overlapping-intervals-accepted.png)
+![Accepted — Non-overlapping Intervals](evidencias/non-overlapping-intervals-accepted.png) 
 
 ---
 
